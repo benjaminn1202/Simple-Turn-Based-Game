@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="menu-window">
+        <input type="button" id="play-btn" value="CLICK ANYWHERE TO CONTINUE... ON THE SCREEN OBVIOUSLY" onclick="playmusic()">
+    </div>
+
+    <div id="wrapper">
+        <div id="nav-box">
+            <img id="menu-btn" src="menu.svg">
+            <img id="settings-btn" src="settings.svg">
+            <img id="restart-btn" src="restart.svg">
+            <img id="about-btn" src="about.svg">
+        </div>
+
+        <div id="p1-info-box">
+            <img id="p1-img" src="portrait2.png">
+            <div id="p1-name">BENJAMIN</div>
+            <div id="p1-class">Class: Warrior</div>
+            <div id="p1-hp">Health: 80/80</div>
+            <div id="p1-sp">Shield: 0</div>
+            <canvas id="p1-hp-bar"></canvas>
+        </div>
+
+        <div id="act-box"></div>
+
+        <div id="canvas-box">
+            <img id="p1-avatar" class="" src="">
+            <img id="p2-avatar" class="" src="">
+            <div id="dmgTxt1" class="">100</div>
+            <div id="dmgTxt2" class="">100</div>
+        </div>
+
+        <div id="p2-info-box">
+            <img id="p2-img" src="portrait2.png">
+            <div id="p2-name">BENJAMIN</div>
+            <div id="p2-class">Class: Warrior</div>
+            <div id="p2-hp">Health: 80/80</div>
+            <div id="p2-sp">Shield: 0</div>
+            <canvas id="p2-hp-bar"></canvas>
+        </div>
+
+        <div id="event-box">
+            <textarea id="events" disabled></textarea>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="index.js"></script>

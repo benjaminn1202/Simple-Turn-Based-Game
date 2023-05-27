@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            user-select: none;
+        }
+        #wrapper {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template: 1fr 1fr 1fr/ 1fr;
+            align-items: center;
+            justify-items: center;
+            font-size: 2vw;
+            background-color: #000;
+        }
+        #wrapper div, img {
+            width: 60%;
+            background-color: #333;
+            height: 100%;
+            color: #fff;
+        }
+        #restart {
+            font-size: 5vh;
+            padding: 2vh;
+            border-radius: 1vh;
+            background-color: #333;
+            border: 1vh solid #fff;
+            color: #fff;
+            animation: animate 2s infinite;
+        }
+        #res-wrapper {
+            background-color: #333;
+            display: grid;
+            align-items: center;
+        }
+
+        #menu-window {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #333;
+        z-index: 10;
+        display: grid;
+        grid-template: auto;
+        }
+
+        #play-btn {
+            background-color: #333;
+            color: #ddd;
+            font-size: 5vh;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes animate {
+            0% {background-color: #333;}
+            50% {background-color: #888;}
+            100% {background-color: #333;}
+        }
+                
+        @keyframes blink {
+            0% {color: #ddd;}
+            50% {color: tomato;}
+            100% {color: #ddd;}
+        }
+    </style>
+</head>
+<body>
+    <div id="menu-window">
+        <input type="button" id="play-btn" value="YOU LOST! CLICK ANYWHERE TO CONTINUE..." onclick="playmusic()">
+    </div>
+
+    <div id="wrapper">
+        <img src="clouds.gif">
+        <div><p>
+            You lie on the ground, every bit of energy leaving your body. Your enemy stands victoriously before you. Your conciousness slowly fades out until finally, it's gone. Forever.
+        </p></div>
+        <div id="res-wrapper"><input type="button" id="restart" value="Restart Game"></div>
+    </div>
+
+    <script type="text/javascript">
+        document.querySelector('#restart').onclick = function() {
+            window.location.replace('game.html');
+        }
+
+        let win = new Audio('natalo.mp3');
+
+        function playmusic() {
+           win.play();
+           console.log('music played');
+            document.body.removeChild(document.querySelector('#menu-window'));
+        }
+
+        win.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        },false);
+    </script>
+</body>
+</html>
